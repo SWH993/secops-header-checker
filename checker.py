@@ -48,7 +48,7 @@ def check_headers(target_url: str) -> str:
     return result
 
 def main():
-    parser = argparse.ArgumentParser(descripton="SecOps HTTP Security Headers Checker")
+    parser = argparse.ArgumentParser(description="SecOps HTTP Security Headers Checker")
     parser.add_argument("-i", "--input", default="targets.txt", help="Path to file with URLs")
     parser.add_argument("-o", "--output", default="security_report.json", help="Path to output JSON report")
     args = parser.parse_args()
