@@ -7,6 +7,8 @@ RUN adduser -D -g '' secopsuser
 
 WORKDIR /app
 
+RUN pip install --no-cache-dir requests==2.31.0
+
 COPY checker.py targets.txt ./
 
 RUN chown -R secopsuser:secopsuser /app
@@ -14,4 +16,4 @@ RUN chown -R secopsuser:secopsuser /app
 USER secopsuser
 
 ENTRYPOINT ["python", "checker.py"]
-CMD ["0i", "targets.txt", "-o", "security_report.json"]
+CMD ["-i", "targets.txt", "-o", "security_report.json"]
