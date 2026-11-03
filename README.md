@@ -48,26 +48,28 @@ secops-header-checker/
 # ⚙️ Local Installation & Usage
 ## 1. Clone the repository & set up a virtual environment
 
+```bash
 git clone [https://github.com/YourUsername/secops-header-checker.git](https://github.com/YourUsername/secops-header-checker.git)
 cd secops-header-checker
-
+```
+```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-
+```
 ## 2. Run the tool locally
-
+```bash
 python checker.py -i targets.txt -o security_report.json
-
+```
 # 🐳 Docker Usage (Hardened Container)
 ### Build the Docker image
-
+```bash
 docker build -t secops-header-checker .
-
+```
 ### Run the container
-
+```bash
 docker run --rm -v $(pwd):/app secops-header-checker -i targets.txt -o security_report.json
-
+```
 # 🔄 CI/CD Pipeline
 
 ### The project includes an automated GitHub Actions workflow (.github/workflows/ci.yml) that triggers on every push and pull_request:
